@@ -16,10 +16,9 @@ const app = express();
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "https://evm-8kgl.vercel.app", // Frontend origin
-    credentials: true, // Allow cookies or other credentials
+    origin: "https://evm-8kgl.vercel.app", // Frontend origin // Allow cookies or other credentials
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization']
+    //allowedHeaders: ['Content-Type', 'Authorization']
   })
 );
 app.use(express.json({ limit: '50mb' }));

@@ -29,10 +29,9 @@ const tenant_1 = __importDefault(require("./routes/tenant"));
 const app = (0, express_1.default)();
 app.use(cookieParser());
 app.use((0, cors_1.default)({
-    origin: 'https://chain-notify-frontend.vercel.app', // Frontend origin
-    credentials: true, // Allow cookies or other credentials
+    origin: "https://evm-8kgl.vercel.app", // Frontend origin // Allow cookies or other credentials
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization']
+    //allowedHeaders: ['Content-Type', 'Authorization']
 }));
 app.use(express_1.default.json({ limit: '50mb' }));
 //?* MIDDLEWARES
