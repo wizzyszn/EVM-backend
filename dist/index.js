@@ -17,7 +17,7 @@ const mongoose_1 = __importDefault(require("mongoose"));
 const env_1 = require("./utils/env");
 const dotenv_1 = __importDefault(require("dotenv"));
 const morgan = require("morgan");
-const cookieParser = require('cookie-parser');
+//const cookieParser = require('cookie-parser');
 const port = (0, env_1.getEnvVar)("SERVER_PORT", "5000");
 dotenv_1.default.config();
 const cors_1 = __importDefault(require("cors"));
@@ -27,12 +27,8 @@ const estate_1 = __importDefault(require("./routes/estate"));
 const property_1 = __importDefault(require("./routes/property"));
 const tenant_1 = __importDefault(require("./routes/tenant"));
 const app = (0, express_1.default)();
-app.use(cookieParser());
-app.use((0, cors_1.default)({
-    origin: "https://evm-8kgl.vercel.app", // Frontend origin // Allow cookies or other credentials
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    //allowedHeaders: ['Content-Type', 'Authorization']
-}));
+//app.use(cookieParser());
+app.use((0, cors_1.default)());
 app.use(express_1.default.json({ limit: '50mb' }));
 //?* MIDDLEWARES
 app.use(morgan("dev"));
