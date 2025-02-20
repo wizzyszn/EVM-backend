@@ -16,7 +16,7 @@ const app = express();
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "https://evm-8kgl.vercel.app", // Frontend origin // Allow cookies or other credentials
+    origin: "https://evm-8kgl-wizzyszns-projects.vercel.app", // Frontend origin // Allow cookies or other credentials
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization']
   })
