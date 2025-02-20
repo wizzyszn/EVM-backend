@@ -3,24 +3,16 @@ import mongoose from "mongoose";
 import { getEnvVar } from "./utils/env";
 import dotenv from "dotenv";
 const morgan = require("morgan");
-const cookieParser = require('cookie-parser');
+
 const port = getEnvVar("SERVER_PORT", "5000");
 dotenv.config();
-import cors from 'cors'
+
 import authRouter from "./routes/auth";
 import userRouter from "./routes/user";
 import estateRouter from "./routes/estate";
 import propertyRouter from "./routes/property";
 import tenantRouter from "./routes/tenant";
 const app = express();
-app.use(cookieParser());
-app.use(
-  cors({
-    origin: "https://evm-8kgl-wizzyszns-projects.vercel.app", // Frontend origin // Allow cookies or other credentials
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization']
-  })
-);
 app.use(express.json({ limit: '50mb' }));
 //?* MIDDLEWARES
 app.use(morgan("dev"));
